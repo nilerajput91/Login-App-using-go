@@ -28,7 +28,7 @@ func (a *App) UserSignUp(w http.ResponseWriter, r *http.Request) {
 	if status != nil {
 		log.Printf("Error from SMTP Server: %s", status)
 	}
-	log.Print("Email Sent Successfully")
+	log.Print("Email Sent Successfully...")
 
 	body, err := ioutil.ReadAll(r.Body)
 	if err != nil {
