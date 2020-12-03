@@ -18,6 +18,7 @@ func (a *App) UserSignUp(w http.ResponseWriter, r *http.Request) {
 	var resp = map[string]interface{}{"status": "success", "message": "Registered successfully and Mail sent"}
 
 	user := &models.User{}
+	//email logic
 	toEmail := os.Getenv("TOEMAIL")
 	fromEmail := os.Getenv("EMAIL")
 	password := os.Getenv("PASSWORD")
