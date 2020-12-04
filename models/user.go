@@ -9,7 +9,7 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
-// User model
+// User model which is accept the all user info. field 
 type User struct {
 	gorm.Model
 	Email            string `gorm:"type:varchar(100);unique_index" json:"email"`
