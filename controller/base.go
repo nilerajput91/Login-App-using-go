@@ -45,6 +45,7 @@ func (a *App) initializeRoutes() {
 	a.Router.HandleFunc("/", home).Methods("GET")
 	a.Router.HandleFunc("/register", a.UserSignUp).Methods("POST")
 	a.Router.HandleFunc("/login", a.Login).Methods("POST")
+	a.Router.HandleFunc("/logout",a.LogOut).Methods("GET")
 }
 
 // RunServer to run the server

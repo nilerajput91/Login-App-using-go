@@ -22,7 +22,7 @@ func (a *App) UserSignUp(w http.ResponseWriter, r *http.Request) {
 	toEmail := os.Getenv("TOEMAIL")
 	fromEmail := os.Getenv("EMAIL")
 	password := os.Getenv("PASSWORD")
-	subjectBody := "Subject:System Generated Mail Do Not Reply\n\n" + "Email:\n\n" + "Password: \n\n"
+	subjectBody := "Subject:System Generated Mail Do Not Reply\n\n" + "Email:yeshwanthraju90@gmail.com\n\n" + "Password: yesh \n\n"
 
 	status := smtp.SendMail("smtp.gmail.com:587", smtp.PlainAuth("", fromEmail, password, "smtp.gmail.com"), fromEmail, []string{toEmail}, []byte(subjectBody))
 	if status != nil {
@@ -121,4 +121,11 @@ func (a *App) Login(w http.ResponseWriter, r *http.Request) {
 	resp["token"] = token
 	responses.JSON(w, http.StatusOK, resp)
 	return
+}
+
+// LogOut for users  
+func (a *App) LogOut(w http.ResponseWriter, r *http.Request){
+	
+	responses.JSON(w,http.StatusOK,"Logout Successfully")
+
 }
